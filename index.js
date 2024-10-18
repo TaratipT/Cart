@@ -22,6 +22,21 @@ app.get('/menu', (req, res) => {
   });
 });
 
+app.get('/getQRCode/:restaurantID', (req, res) => {
+  const restaurantID = req.params.restaurantID;
+  const query = 'SELECT shopQR FROM shop WHERE shopID = 1';
+
+  db.get(query, [restaurantID], (err, row) => {
+    if (err) {
+      res.status(500).json({ error: 'Database error' });
+    } else if (row) {
+      res.json({ qrCode: row.qrCode });
+    } else {
+      res.status(404).json({ error: 'QR Code not found' });
+    }
+  });
+});
+
 // Add this route to handle deleting a menu item from the database
 app.delete('/menu/:id', (req, res) => {
   const menuID = req.params.id;
