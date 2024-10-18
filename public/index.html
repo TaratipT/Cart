@@ -15,8 +15,15 @@
     </div>
     <div class="total">ราคารวม <span id="total-price">0</span> ฿</div>
     <div class="checkout">
-      <button>ถัดไป</button>
+      <button id="next-button">ถัดไป</button>
     </div>
+    
+    <script>
+      // Redirect to payment page on button click
+      document.getElementById('next-button').addEventListener('click', function() {
+        window.location.href = 'payment.html'; // Redirects to payment page
+      });
+    </script>
   </div>
 
   <!-- Link to the external JavaScript file -->

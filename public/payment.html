@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>การชำระเงิน</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #A5CDC8; /* Light blue background */
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .payment-container {
+      background-color: #ffffff;
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      max-width: 300px;
+      width: 100%;
+    }
+
+    .payment-container h2 {
+      margin-bottom: 20px;
+    }
+
+    .payment-option {
+      background-color: #e0e0e0;
+      border: none;
+      padding: 15px;
+      font-size: 18px;
+      width: 100%;
+      border-radius: 30px;
+      cursor: pointer;
+      margin-bottom: 15px;
+      transition: background-color 0.3s ease;
+    }
+
+    .payment-option:hover {
+      background-color: #d1d1d1;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="payment-container">
+    <h2>เลือกวิธีการชำระเงิน</h2>
+    <button class="payment-option">QR PAYMENT</button>
+    <button class="payment-option">ชำระเงินสดหน้าร้าน</button>
+  </div>
+</body>
+<script>
+    document.querySelector('.payment-option:nth-child(2)').addEventListener('click', function() {
+      alert('QR PAYMENT option selected');
+      // Add further logic for QR Payment
+    });
+  
+    document.querySelector('.payment-option:nth-child(3)').addEventListener('click', function() {
+      alert('Cash option selected');
+      // Add further logic for Cash Payment
+    });
+  </script>
+  
+</html>
