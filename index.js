@@ -22,6 +22,19 @@ app.get('/menu', (req, res) => {
   });
 });
 
+// Add this route to handle deleting a menu item from the database
+app.delete('/menu/:id', (req, res) => {
+  const menuID = req.params.id;
+  const query = 'DELETE FROM menu WHERE menuID = ?';
+
+  db.run(query, [menuID], function(err) {
+    if (err) {
+      return res.status(500).json({ error: err.message });
+    }
+    res.json({ message: 'Menu item deleted successfully' });
+  });
+});
+
 // Start server
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {

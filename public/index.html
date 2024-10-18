@@ -19,43 +19,8 @@
     </div>
   </div>
 
-  <script>
-    async function loadCart() {
-      const response = await fetch('/menu');
-      const data = await response.json();
-      const cartItems = data.data;
-
-      let total = 0;
-      const cartItemsContainer = document.getElementById('cart-items');
-      cartItemsContainer.innerHTML = ''; // Clear previous content
-
-      cartItems.forEach(item => {
-        total += item.menuPrice;
-
-        const cartItemDiv = document.createElement('div');
-        cartItemDiv.classList.add('cart-item');
-
-        cartItemDiv.innerHTML = `
-          <div class="item-details">
-            <img src="${item.menuPicture || 'images/item_image.png'}" alt="Item image" class="item-image">
-            <span>${item.menuName}</span>
-          </div>
-          <div class="item-controls">
-            <button>-</button>
-            <span>1</span>
-            <button>+</button>
-          </div>
-          <span>${item.menuPrice} ฿</span>
-        `;
-
-        cartItemsContainer.appendChild(cartItemDiv);
-      });
-
-      document.getElementById('total-price').textContent = total;
-    }
-
-    loadCart();
-  </script>
+  <!-- Link to the external JavaScript file -->
+  <script src="cart.js"></script>
 
 </body>
 </html>
