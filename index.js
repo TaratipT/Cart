@@ -25,7 +25,7 @@ app.get('/menu', (req, res) => {
 // Add this route to handle deleting a menu item from the database
 app.delete('/menu/:id', (req, res) => {
   const menuID = req.params.id;
-  const query = 'DELETE FROM menu WHERE menuID = ?';
+  const query = 'DELETE FROM cart WHERE menuID = ?';
 
   db.run(query, [menuID], function(err) {
     if (err) {

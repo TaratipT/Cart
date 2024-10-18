@@ -19,9 +19,7 @@ async function loadCart() {
           <span>${item.menuName}</span>
         </div>
         <div class="item-controls">
-          <button>-</button>
           <span>1</span>
-          <button>+</button>
         </div>
         <span>${item.menuPrice} ฿</span>
         <button class="delete-btn" onclick="deleteItem(${item.menuID})">✖</button>
